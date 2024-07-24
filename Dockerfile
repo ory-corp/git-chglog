@@ -1,7 +1,8 @@
-FROM alpine:3.17.1
+FROM alpine
 
 RUN apk add --no-cache git && \
-    mkdir /workdir
+    mkdir /workdir && \
+    git config --global --add safe.directory /workdir
 
 COPY git-chglog /usr/local/bin/git-chglog
 
